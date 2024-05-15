@@ -22,8 +22,24 @@ type ExampleReply struct {
 	Y int
 }
 
-// Add your RPC definitions here.
+type JobArgs struct {
+	ID          uint64
+	IsMap       bool
+	MapIndex    int
+	ReduceIndex int
+}
 
+type JobReply struct {
+	ID          uint64
+	IsMap       bool
+	MapFilename string
+	MapIndex    int
+	MapCount    int
+	ReduceIndex int
+	ReduceCount int
+}
+
+// Add your RPC definitions here.
 
 // Cook up a unique-ish UNIX-domain socket name
 // in /var/tmp, for the coordinator.
